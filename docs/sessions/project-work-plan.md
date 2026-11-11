@@ -15,7 +15,7 @@ The numbered sessions are declared from `session-plan.md`; each one's task is wh
 | 1 | Author or import the change plan | no | 2026-11-10 |
 | 2 | Break the change plan into numbered sessions | no | 2026-11-10 |
 | 3 | The calculator page | no | 2026-11-10 |
-| 4 | Documentation comments on the calculator | — | not declared |
+| 4 | Documentation comments on the calculator | no | 2026-11-10 |
 
 ### Session 1 — Author or import the change plan
 
@@ -34,3 +34,9 @@ Session 2 appends two numbered sessions to docs/sessions/session-plan.md from do
 **Releasable: no.**
 
 Session 3 adds an online calculator page to ContosoUniversityDotNetCore inside its existing shape, on netcoreapp2.0: ContosoUniversity/Features/Calculator/Calculator.cs (a static Calculator with Add and Subtract over decimals), ContosoUniversity/Features/Calculator/CalculatorController.cs (GET Index shows the form, POST Index shows the sum and difference) and ContosoUniversity/Features/Calculator/Index.cshtml, whose form opts out of the layout's global AJAX submit with the repository's own no-ajax class, a Calculator link in ContosoUniversity/Features/Shared/_Layout.cshtml, and ContosoUniversity.IntegrationTests/Features/Calculator/CalculatorTests.cs with one xunit fact each for Add and Subtract. The SDK-style projects take the new files by glob, so no project file changes. Each step is shown by dotnet build, the last by dotnet test of CalculatorTests.
+
+### Session 4 — Documentation comments on the calculator
+
+**Releasable: no.**
+
+Session 4 adds documentation comments to what session 3 added and changes nothing else: XML documentation comments on Calculator, Add and Subtract in ContosoUniversity/Features/Calculator/Calculator.cs and on CalculatorController and both Index actions in ContosoUniversity/Features/Calculator/CalculatorController.cs, and a Razor comment at the top of ContosoUniversity/Features/Calculator/Index.cshtml. Each step is shown by dotnet build and by a check that the diff of its files against HEAD only adds comment lines.
