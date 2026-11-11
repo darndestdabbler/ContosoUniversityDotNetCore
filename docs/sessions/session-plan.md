@@ -77,3 +77,29 @@ packaging.
 
 > Do NOT hand-author `sessions.json`. The first `session start`
 > bootstraps it from this plan — state files are the writers' job.
+
+### Session 3: The calculator page
+
+1. Register.
+2. Add `ContosoUniversity/Features/Calculator/Calculator.cs`, a static
+   `Calculator` with `Add` and `Subtract`, each taking two decimals and
+   returning a decimal.
+3. Add `ContosoUniversity/Features/Calculator/CalculatorController.cs`
+   (GET `Index` shows the form; POST `Index` takes the two numbers and
+   shows their sum and difference) and
+   `ContosoUniversity/Features/Calculator/Index.cshtml`, and a Calculator
+   link in `ContosoUniversity/Features/Shared/_Layout.cshtml`. The
+   SDK-style project includes the new files by glob.
+4. Add `ContosoUniversity.IntegrationTests/Features/Calculator/CalculatorTests.cs`,
+   one xunit fact for `Add` and one for `Subtract`. `dotnet test` runs it;
+   the dotnet suite in `dabbler.yaml` selects it by name.
+
+### Session 4: Documentation comments on the calculator
+
+1. Register.
+2. Add XML documentation comments to `Calculator`, `Add` and `Subtract`,
+   and to `CalculatorController` and both `Index` actions. No code line
+   changes.
+3. Add a Razor comment at the top of
+   `ContosoUniversity/Features/Calculator/Index.cshtml` saying what the
+   page is. No markup changes. `dotnet test` still passes.
