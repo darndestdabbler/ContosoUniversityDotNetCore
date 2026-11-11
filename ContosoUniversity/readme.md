@@ -1,3 +1,5 @@
+# README.md file modified by human operator on 2026-11-11
+
 # Contoso University sample app
 
 Contoso University demonstrates how to use Entity Framework Core in an
